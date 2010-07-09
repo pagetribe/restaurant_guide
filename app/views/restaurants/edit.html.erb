@@ -1,0 +1,44 @@
+<h1>Editing restaurant</h1>
+
+<% form_for(@restaurant) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </p>
+  <p>
+    <%= f.label :suburb %><br />
+    <%= f.text_field :suburb %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :postcode %><br />
+    <%= f.text_field :postcode %>
+  </p>
+  <p>
+    <%= f.label :offer %><br />
+    <%= f.text_field :offer %>
+  </p>
+  <p>
+    <%= f.label :up_to %><br />
+    <%= f.text_field :up_to %>
+  </p>
+  <p>
+    <%= f.label :page_num %><br />
+    <%= f.text_field :page_num %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @restaurant %> |
+<%= link_to 'Back', restaurants_path %>

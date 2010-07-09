@@ -1,0 +1,56 @@
+.dhtmlselect{ /*style of DHTML Select Menu, main box */
+	width: 242px; /*default  width of main box */
+	position: relative;
+	padding: 1px 0;
+	text-indent: 7px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-bottom: 5px;
+	background:url(../images/bg-sel.png) left top no-repeat !important;
+}
+
+
+#searchCriteria .dhtmlselect {
+	width: 218px;
+	background:url(../images/bg-selSrch.png) left top no-repeat !important;
+	font-weight: normal;}
+
+.sortSearch .dhtmlselect {
+	width: 154px; 
+	margin-left: 50px;}
+
+.dhtmlselect .downimage{ /*style of "down" image to the right of the DHTML Select Menu*/
+	position: absolute;
+	margin: -1px 0 0 -3px;}
+
+.dhtmlselect .dropdown{ /*style of Drop Down Menu that appears onMouseover */
+	position: absolute;
+	width: 180px; /*default width of drop down menu*/
+	border: 1px solid black;
+	border-bottom-width: 0;
+	display: none;
+	z-index: 5;
+	font-weight: normal;
+}
+
+.dhtmlselect .dropdown a{ /*style of Drop Down Menu's links */
+	width: auto;
+	display: block;
+	/*background:url(../images/bg-sel2.png) left top repeat;*/
+	background: #d9cbae;
+	border-bottom: 1px solid black;
+	padding: 1px 0;
+	text-indent: 5px;
+	text-decoration: none;
+	color: #404e59;
+	font-weight: normal;
+}
+
+* html .dhtmlselect .dropdown a{ /*IE 6 (and below) hack */
+	width: 100%;
+}
+
+.dhtmlselect .dropdown a:hover{
+	background: #b5975b;
+	color: #fff;
+}

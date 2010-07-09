@@ -1,0 +1,97 @@
+﻿.RadWindow_Default .rwTopLeft,
+.RadWindow_Default .rwTopRight,
+.RadWindow_Default .rwTitlebar,
+.RadWindow_Default .rwFooterLeft,
+.RadWindow_Default .rwFooterRight,
+.RadWindow_Default .rwFooterCenter,
+.RadWindow_Default .rwTopResize,
+.RadWindow_Default .rwStatusbar div,
+.RadWindow_Default .rwStatusbar,
+.RadWindow_Default .rwPopupButton,
+.RadWindow_Default .rwPopupButton span,
+.RadWindow_Default.rwMinimizedWindow .rwCorner
+{
+    background-image: url('WebResource.axd?d=J7qUIzH4YjIVar2U2d5zAYB1h_qe51ocBxWPcWV5AAezzRgtFetottQQPunrv70zHxJFieGGjQk6XMa2GY-4bElN6X3njPh-15YkaD76mHE1&t=633927822280000000');
+}
+
+.RadWindow_Default .rwBodyLeft,
+.RadWindow_Default .rwBodyRight,
+.RadWindow_Default .rwStatusbarRow .rwCorner
+{
+	background-image: url('WebResource.axd?d=J7qUIzH4YjIVar2U2d5zAYB1h_qe51ocBxWPcWV5AAezzRgtFetottQQPunrv70zPKCDR_7BWlH8CDPMoGK8y7iH4g7JqaLqNgCHctw5vHk1&t=633927822280000000');
+}
+
+.RadWindow_Default .rwStatusbar input
+{
+    background-color: #f7f3e9;
+}
+
+.RadWindow_Default .rwControlButtons a
+{
+    background-image: url('WebResource.axd?d=J7qUIzH4YjIVar2U2d5zAYB1h_qe51ocBxWPcWV5AAezzRgtFetottQQPunrv70zTo5Ko7yfcerjvZC5RIavOZMabBkmk7uDhMVlwwkWXN81&t=633927822280000000');
+}
+
+.RadWindow_Default a.rwIcon
+{
+	background-image: url('WebResource.axd?d=J7qUIzH4YjIVar2U2d5zAYB1h_qe51ocBxWPcWV5AAezzRgtFetottQQPunrv70zHxJFieGGjQk6XMa2GY-4bElN6X3njPh-15YkaD76mHE1&t=633927822280000000');
+}
+
+div.RadWindow_Default .rwTitlebarControls em
+{
+	color: black;
+}
+
+div.RadWindow_Default .rwDialogInput
+{
+	border-top: solid 1px #abadb3;
+	border-right: solid 1px #dbdfe6;
+	border-bottom: solid 1px #e3e9ef;
+	border-left: solid 1px #e2e3ea;
+}
+
+div.RadWindow_Default .rwDialogInput:hover
+{
+	border-top: solid 1px #5794bf;
+	border-right: solid 1px #b7d5ea;
+	border-bottom: solid 1px #c7e2f1;
+	border-left: solid 1px #c5daed;
+	color: #565656;
+}
+
+div.RadWindow_Default td.rwLoading
+{
+    background-color: #fff;
+}
+
+.RadWindow_Default td.rwWindowContent
+{
+    background-color: #fff;
+}
+
+/* Loading Indicators */
+
+/* When ShowContentDuringLoad="true" */
+.RadWindow_Default td.rwWindowContent.rwLoading
+{
+    background-image: url('WebResource.axd?d=J7qUIzH4YjIVar2U2d5zAYB1h_qe51ocBxWPcWV5AAf3zayw_HIfrcGYQJrIvlt6IgHBizhOevY1byPNExmurw2&t=633927822280000000');
+}
+
+/* When ShowContentDuringLoad="false" */
+.RadWindow_Default input.rwLoading
+{
+    background-image: url('WebResource.axd?d=J7qUIzH4YjIVar2U2d5zAYB1h_qe51ocBxWPcWV5AAf3zayw_HIfrcGYQJrIvlt6VvyteVIdmkCDXMmdFxBisuAp4tNw49I7jQyyEwOrdi81&t=633927822280000000');
+}
+
+div.RadWindow_Default a.rwCancel,
+div.RadWindow_Default a.rwCancel span
+{
+    background: none;
+    cursor: pointer;
+    cursor: hand;
+}
+
+div.RadWindow_Default a.rwCancel span span
+{
+    color: #000000;
+    text-decoration: underline;
+}

@@ -1,0 +1,34 @@
+<h1>Listing restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Street</th>
+    <th>Suburb</th>
+    <th>Phone</th>
+    <th>Postcode</th>
+    <th>Offer</th>
+    <th>Up to</th>
+    <th>Page num</th>
+  </tr>
+
+<% for restaurant in @restaurants %>
+  <tr>
+    <td><%=h restaurant.name %></td>
+    <td><%=h restaurant.street %></td>
+    <td><%=h restaurant.suburb %></td>
+    <td><%=h restaurant.phone %></td>
+    <td><%=h restaurant.postcode %></td>
+    <td><%=h restaurant.offer %></td>
+    <td><%=h restaurant.up_to %></td>
+    <td><%=h restaurant.page_num %></td>
+    <td><%= link_to 'Show', restaurant %></td>
+    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+    <td><%= link_to 'Destroy', restaurant, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New restaurant', new_restaurant_path %>

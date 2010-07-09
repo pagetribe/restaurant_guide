@@ -1,0 +1,355 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (76.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (59.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+  [4;36;1mSQL (137.4ms)[0m   [0;1mCREATE TABLE "restaurants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "suburb" varchar(255), "phone" varchar(255), "postcode" varchar(255), "offer" varchar(255), "up_to" varchar(255), "page_num" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (100.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704094111')[0m
+Migrating to CreateCuisines (20100704094141)
+  [4;36;1mSQL (107.0ms)[0m   [0;1mCREATE TABLE "cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (99.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704094141')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("cuisines")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::BusyException: database is locked: ALTER TABLE "restaurants" ADD "cuisine_id" integer[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (111.9ms)[0m   [0mALTER TABLE "restaurants" ADD "cuisine_id" integer[0m
+  [4;36;1mSQL (88.0ms)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (120.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704112857')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("cuisines")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cuisines")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::BusyException: database is locked: DROP TABLE "cuisines"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cuisines")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "cuisines"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("cuisines")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "cuisines"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE TABLE "cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" name, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_cuisines")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_cuisines"[0m
+  [4;35;1mSQL (87.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704114308')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704112857)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to ChangeCuisineTypeToCuisine (20100704114308)
+Migrating to ChangeCuisineTypeToName (20100704115359)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (111.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (76.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+  [4;36;1mSQL (110.2ms)[0m   [0;1mCREATE TABLE "restaurants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "street" varchar(255), "suburb" varchar(255), "phone" varchar(255), "postcode" varchar(255), "offer" varchar(255), "up_to" varchar(255), "page_num" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (85.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704094111')[0m
+Migrating to CreateCuisines (20100704094141)
+  [4;36;1mSQL (90.7ms)[0m   [0;1mCREATE TABLE "cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (87.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704094141')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("cuisines")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704122327)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::BusyException: database is locked: ALTER TABLE "restaurants" ADD "cuisine_id" integer[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRestaurants (20100704094111)
+Migrating to CreateCuisines (20100704094141)
+Migrating to AddCuisineIdToRestaurant (20100704122327)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (110.7ms)[0m   [0mALTER TABLE "restaurants" ADD "cuisine_id" integer[0m
+  [4;36;1mSQL (77.2ms)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (98.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100704122327')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("cuisines")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("restaurants")[0m

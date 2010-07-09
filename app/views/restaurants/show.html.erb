@@ -1,0 +1,43 @@
+<p>
+  <b>Name:</b>
+  <%=h @restaurant.name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%=h @restaurant.street %>
+</p>
+
+<p>
+  <b>Suburb:</b>
+  <%=h @restaurant.suburb %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @restaurant.phone %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%=h @restaurant.postcode %>
+</p>
+
+<p>
+  <b>Offer:</b>
+  <%=h @restaurant.offer %>
+</p>
+
+<p>
+  <b>Up to:</b>
+  <%=h @restaurant.up_to %>
+</p>
+
+<p>
+  <b>Page num:</b>
+  <%=h @restaurant.page_num %>
+</p>
+
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>

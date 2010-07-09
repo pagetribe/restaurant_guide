@@ -1,0 +1,25 @@
+/* CSS Document for Entertainment Book - Print Styles*/
+
+#printHeader {font-size: 24px; font-weight: bold;}
+h1 {font-size: 22px; font-weight: bold;}
+h2 {font-size: 20px; font-weight: bold;}
+h3 {font-size: 18px; font-weight: bold;}
+h4 {font-size: 16px; font-weight: bold;}
+#sec-home #twoThirds img {display: none;}
+#loginBox, #mainNav, #leftColumn, #breadcrumbs, #searchHolder, #mapHolder, #footer {display: none;}
+
+.printOfferContainer h2 {font-size: 15px;}
+.printOfferContainer {
+	page-break-inside: avoid;
+	border-bottom: 1px dotted #9fa3ac;
+	font-size: 12px;
+	padding-bottom: 20px;
+	vertical-align: top}
+
+.printOffer {
+	margin: 10px 0 0 0;}
+
+.printOfferBook {margin: 5px 0 0 0;}
+
+
+

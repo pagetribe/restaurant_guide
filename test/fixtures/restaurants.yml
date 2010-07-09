@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  street: MyString
+  suburb: MyString
+  phone: MyString
+  postcode: MyString
+  offer: MyString
+  up_to: MyString
+  page_num: MyString
+
+two:
+  name: MyString
+  street: MyString
+  suburb: MyString
+  phone: MyString
+  postcode: MyString
+  offer: MyString
+  up_to: MyString
+  page_num: MyString

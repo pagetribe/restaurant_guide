@@ -1,24 +1,26 @@
 <h1>Listing restaurants</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Street</th>
-    <th>Suburb</th>
-    <th>Phone</th>
-    <th>Postcode</th>
-    <th>Offer</th>
-    <th>Up to</th>
-    <th>Page num</th>
-  </tr>
-
+<table class = "datatable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Street</th>
+      <th>Suburb</th>
+      <th>Phone</th>
+      <th>Offer</th>
+      <th>Up to</th>
+      <th>Page num</th>
+    </tr>
+  </thead>
+  <tbody>
 <% for restaurant in @restaurants %>
   <tr>
     <td><%=h restaurant.name %></td>
+    <td><%=h restaurant.cuisine.name %></td>
     <td><%=h restaurant.street %></td>
     <td><%=h restaurant.suburb %></td>
     <td><%=h restaurant.phone %></td>
-    <td><%=h restaurant.postcode %></td>
     <td><%=h restaurant.offer %></td>
     <td><%=h restaurant.up_to %></td>
     <td><%=h restaurant.page_num %></td>
@@ -27,6 +29,7 @@
     <td><%= link_to 'Destroy', restaurant, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

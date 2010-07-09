@@ -5,7 +5,7 @@ task :import_data  => :environment do
   doc = Nokogiri::HTML(f)
 #  p doc.at_css("h4 span").text
   doc.css(".srchResult").each  do |rest|
-#    puts "title: #{rest.at_css("h4 span").text}"
+    puts "title: #{rest.at_css("h4 span").text}"
 #    puts "offer: #{rest.at_css(".gold").text}"
 #    p "up to: #{rest.at_css("p:nth-child(4)").inner_html}"
     details = rest.at_css("p:nth-child(4)").inner_html
@@ -29,7 +29,7 @@ task :import_data  => :environment do
 #    puts "up to: #{details[0]}"
 #    puts "page #: #{details[1]}"
 #    puts "card #: #{details[2]}"
-#    puts "type: #{details[3]}"
+    puts "type: #{details[3]}"
     #p details
     #p details.gsub(/<\/?[^>]+>/, '')
 
@@ -49,18 +49,20 @@ task :import_data  => :environment do
 #    puts address
     
     #add to database
-    restaurant = Restaurant.new
-    restaurant.name = rest.at_css("h4 span").text
-    restaurant.street = address[0]
-    restaurant.suburb = address[1]
-    restaurant.phone = address[3]
-    restaurant.postcode = address[2]
-    restaurant.offer = rest.at_css(".gold").text
-    restaurant.up_to = details[0]
-    restaurant.page_num = details[1]
-    restaurant.card_num = details[2]
-    restaurant.cuisine = Cuisine.create!(:name => details[3])
-    restaurant.save!
+#    restaurant = Restaurant.new
+#    restaurant.name = rest.at_css("h4 span").text
+#    restaurant.street = address[0]
+#    restaurant.suburb = address[1]
+#    restaurant.phone = address[3]
+#    restaurant.postcode = address[2]
+#    restaurant.offer = rest.at_css(".gold").text
+#    restaurant.up_to = details[0]
+#    restaurant.page_num = details[1]
+#    restaurant.card_num = details[2]
+#    restaurant.cuisine = Cuisine.find_by_name(details[3]) unless Cuisine.create(:name => details[3])
+#    restaurant.save
+     # updated due to error
+     #Restaurant.update(Restaurant.find_by_name(rest.at_css("h4 span").text), :cuisine => Cuisine.find_by_name(details[3]))
  
   end
   

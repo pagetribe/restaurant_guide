@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => "restaurants"
   map.resources :restaurants
 
   # The priority is based upon order of creation: first created -> highest priority.

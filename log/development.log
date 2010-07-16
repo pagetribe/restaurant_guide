@@ -11035,3 +11035,421 @@ ActionController::RoutingError (No route matches "/images/spinner.gif" with {:me
     script/server:3
 
 Rendering /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:28:27) [GET]
+  [4;36;1mRestaurant Load (2.8ms)[0m   [0;1mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+
+
+ActionView::TemplateError (undefined local variable or method `restaurant' for #<ActionView::Base:0xb67416f0>) on line #8 of app/views/restaurants/index.html.erb:
+5: 
+6: <table class = "datatable display">
+7:   <thead>
+8:     <tr title = "<%=h restaurant.name %>">
+9:       <th>Name</th>
+10:       <th>Type</th>
+11:       <th>Street</th>
+
+    app/views/restaurants/index.html.erb:8
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `send'
+    vendor/rails/actionpack/lib/action_view/renderable.rb:39:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:73:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:256:in `render'
+    vendor/rails/actionpack/lib/action_view/base.rb:369:in `_render_with_layout'
+    vendor/rails/actionpack/lib/action_view/base.rb:254:in `render'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1177:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:905:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:164:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:158:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/restaurants_controller.rb:7:in `index'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1256:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:524:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:134:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:392:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:184:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/_trace (35.8ms)
+Rendered /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:28:54) [GET]
+  [4;35;1mRestaurant Load (3.3ms)[0m   [0mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;36;1mCuisine Load (0.5ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 89ms (View: 73, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:29:12) [GET]
+  [4;36;1mRestaurant Load (2.9ms)[0m   [0;1mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 90ms (View: 75, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-16 19:29:13) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/spinner.gif" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:32:48) [GET]
+  [4;35;1mRestaurant Load (3.3ms)[0m   [0mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 92ms (View: 75, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:32:51) [GET]
+  [4;36;1mRestaurant Load (3.0ms)[0m   [0;1mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;35;1mCuisine Load (0.5ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 90ms (View: 74, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:32:55) [GET]
+  [4;35;1mRestaurant Load (2.8ms)[0m   [0mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 147ms (View: 132, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-16 19:32:58) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/spinner.gif" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:34:13) [GET]
+  [4;36;1mRestaurant Load (3.5ms)[0m   [0;1mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCuisine Load (0.6ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 95ms (View: 79, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:34:16) [GET]
+  [4;35;1mRestaurant Load (3.0ms)[0m   [0mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 90ms (View: 74, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-16 19:34:17) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/spinner.gif" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:36:25) [GET]
+  [4;36;1mRestaurant Load (3.0ms)[0m   [0;1mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;35;1mCuisine Load (1.1ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 93ms (View: 77, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:36:27) [GET]
+  [4;35;1mRestaurant Load (2.9ms)[0m   [0mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCuisine Load (0.6ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 87ms (View: 71, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing RestaurantsController#index (for 127.0.0.1 at 2010-07-16 19:36:33) [GET]
+  [4;36;1mRestaurant Load (2.9ms)[0m   [0;1mSELECT * FROM "restaurants" LIMIT 10[0m
+Rendering template within layouts/restaurants
+Rendering restaurants/index
+  [4;35;1mCuisine Load (0.6ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 1) [0m
+  [4;36;1mCuisine Load (0.4ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 2) [0m
+  [4;35;1mCuisine Load (0.3ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCuisine Load (0.4ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCuisine Load (0.3ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 5) [0m
+  [4;35;1mCuisine Load (0.6ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "cuisines" WHERE ("cuisines"."id" = 3) [0m
+Completed in 89ms (View: 73, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-16 19:36:33) [GET]
+
+
+ActionController::RoutingError (No route matches "/images/spinner.gif" with {:method=>:get}):
+    /vendor/rails/actionpack/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:390:in `recognize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:112:in `dispatch_unlocked'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:125:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `synchronize'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:124:in `dispatch'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:134:in `dispatch_cgi'
+    /vendor/rails/actionpack/lib/action_controller/dispatcher.rb:41:in `dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:103:in `handle_dispatch'
+    /vendor/rails/railties/lib/webrick_server.rb:74:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /vendor/rails/railties/lib/webrick_server.rb:60:in `dispatch'
+    /vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /vendor/rails/activesupport/lib/active_support/dependencies.rb:153:in `require'
+    /vendor/rails/railties/lib/commands/server.rb:49
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /var/www/rails_projects/restaurant/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (not_found)

@@ -21,7 +21,7 @@
   </thead>
   <tbody>
 <% for restaurant in @restaurants %>
-  <tr>
+  <tr title = "<%=h restaurant.name %>">
     <td><%=h restaurant.name %></td>
     <td><%=h restaurant.cuisine.name %></td>
     <td><%=h restaurant.street %></td>

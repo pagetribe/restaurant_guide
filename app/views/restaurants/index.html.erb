@@ -1,6 +1,9 @@
+<% columns = [{:type => 'html', :class => "first"}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => 'html'}, {:type => nil, :class => "last"}] %>
+<%= datatable(columns, {:sort_by => "[0, 'desc']", :processing => image_tag("spinner.gif") }) %>
+
 <h1>Listing restaurants</h1>
 
-<table class = "datatable">
+<table class = "datatable display">
   <thead>
     <tr>
       <th>Name</th>
@@ -11,6 +14,9 @@
       <th>Offer</th>
       <th>Up to</th>
       <th>Page num</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
     </tr>
   </thead>
   <tbody>

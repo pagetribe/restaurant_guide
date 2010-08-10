@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "nokogiri"
-
+  config.gem "will_paginate"
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -56,7 +56,7 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_restaurant_session',
+    :key => '_restaurant_session',
     :secret      => '8475253967ac384683b6d512841d5c6ffb5fa7268d30e6377346189f7686ba422b8a0f9b590eb04f4c2b5f20281e916247b4f234b8838304369256fc2437efaa'
   }
 

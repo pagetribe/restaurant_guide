@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "restaurants"
   map.resources :restaurants
-
+  map.resources :ratings
+  map.datatable '/datatable', :controller => 'restaurants', :action => 'datatable'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

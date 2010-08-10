@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.xml
   def index
-    @restaurants = Restaurant.find(:all, :limit  => 10)
+    @restaurants = Restaurant.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -81,5 +81,44 @@ class RestaurantsController < ApplicationController
       format.html { redirect_to(restaurants_url) }
       format.xml  { head :ok }
     end
+  end
+
+  #datatable
+  def datatable
+    @objects = current_objects(params)
+    @total_objects = total_objects(params)
+    render :layout => false
+  end
+
+  private
+
+  def current_objects(params={})
+    current_page = (params[:iDisplayStart].to_i/params[:iDisplayLength].to_i rescue 0)+1
+    @current_objects = Restaurant.paginate :page => current_page,
+                                       :include => "#{datatable_columns(params[:iSortCol_0])} #{params[:sSortDir_0] || "DESC"}",
+                                       :conditions => conditions,
+                                       :per_page => params[:iDisplayLength]
+  end
+
+  def total_objects(params={})
+    @total_objects = Restaurant.count :include => [:user], :conditions => conditions
+  end
+
+  def datatable_columns(column_id)
+    debugger 
+    case column_id.to_i
+    when 1
+      return "objects.description"
+    when 2 
+      return "objects.created_at"
+    else
+      return "restaurants.name"
+    end
+  end
+
+  def conditions
+    conditions = []
+    conditions << "(ojbects.description ILIKE '%#{params[:sSearch]}%' OR users.name ILIKE '%#{params[:sSearch]}%')" if(params[:sSearch])
+    return conditions.join(" AND ")
   end
 end
